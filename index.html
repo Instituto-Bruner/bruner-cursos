@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=20260819-3">
+<link rel="stylesheet" href="styles.css?v=20260827-4">
 </head>
 <body>
   <header class="hero" id="inicio">
@@ -33,6 +33,19 @@
   </header>
 
   <main>
+    <section class="community-benefits shell" id="beneficios-comunidad" aria-labelledby="community-title">
+      <div class="community-intro">
+        <p class="community-kicker">Beneficios para comunidades educativas</p>
+        <h2 id="community-title">¿Pertenecés a Cristo Obrero o IRESM?</h2>
+        <p>Seleccioná tu comunidad para identificar los cursos con cuotas especiales.</p>
+      </div>
+      <div class="community-options" role="group" aria-label="Elegir comunidad educativa">
+        <button type="button" data-community="cristo-obrero" aria-pressed="false"><span class="community-option-icon" aria-hidden="true">CO</span><span><strong>Cristo Obrero</strong><small>Villa Carlos Paz</small></span><b aria-hidden="true">→</b></button>
+        <button type="button" data-community="iresm" aria-pressed="false"><span class="community-option-icon" aria-hidden="true">IR</span><span><strong>IRESM</strong><small>Comunidad educativa</small></span><b aria-hidden="true">→</b></button>
+      </div>
+      <div class="community-active" id="community-active" hidden aria-live="polite"><span class="community-active-check" aria-hidden="true">✓</span><span><small>Beneficio activado</small><strong id="community-active-name"></strong><span>Vas a ver una identificación especial en los cursos. Consultanos para conocer tu cuota preferencial.</span></span><button type="button" id="community-clear">Cambiar</button></div>
+    </section>
+
     <section class="intro shell" id="cursos">
       <p class="eyebrow">Nuestros cursos</p><h2>Elegí qué querés aprender</h2>
       <p>Capacitaciones diseñadas para ganar experiencia real, confianza y herramientas concretas para trabajar.</p>
@@ -72,12 +85,13 @@
     <div class="lead-layout">
       <aside class="lead-aside"><span class="lead-badge">Instituto Bruner</span><h2>Empezá a construir tu futuro.</h2><p>Dejanos tus datos y una asesora se comunicará para contarte fechas, horarios, sedes y formas de pago.</p><div class="lead-trust"><span>✓ Atención personalizada</span><span>✓ Cursos presenciales</span><span>✓ Formación práctica</span></div></aside>
       <form class="lead-form" id="lead-form">
-        <div class="lead-heading"><p class="eyebrow">Quiero más información</p><h2>Contanos qué curso te interesa</h2><p>Completá estos datos. Te llevará menos de un minuto.</p></div>
+        <div class="lead-heading"><p class="eyebrow">Quiero más información</p><h2>Contanos qué curso te interesa</h2><p>Completá estos datos. Te llevará menos de un minuto.</p><p class="lead-community-note" id="lead-community-note" hidden></p></div>
         <label>Nombre y apellido<input id="lead-name" name="nombre" autocomplete="name" required placeholder="Ej.: María González"></label>
         <label>Teléfono<input id="lead-phone" name="telefono" type="tel" inputmode="tel" autocomplete="tel" required placeholder="Ej.: 351 555-1234"><small>Ingresá tu número con código de área.</small></label>
         <label>Curso<select id="lead-course" name="curso" required></select></label>
         <label>Sede<select id="lead-site" name="sede" required><option value="">Elegí una sede</option></select></label>
-        <label>¿Cómo nos conociste?<select id="lead-source" name="origen" required><option value="">Elegí una opción</option><option>Instagram</option><option>Facebook</option><option>Google</option><option>Recomendación</option><option>Vía pública</option><option>WhatsApp</option><option>Otro</option></select></label>
+        <label>¿Cómo nos conociste?<select id="lead-source" name="origenBase" required><option value="">Elegí una opción</option><option>Instagram</option><option>Facebook</option><option>Google</option><option>Recomendación</option><option>Vía pública</option><option>WhatsApp</option><option>Otro</option></select></label>
+        <input id="lead-origin" name="origen" type="hidden">
         <input class="lead-honeypot" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
         <button class="button lead-submit" type="submit">Solicitar información <span>→</span></button>
         <p class="lead-feedback" id="lead-feedback" role="status" aria-live="polite"></p>
@@ -107,6 +121,6 @@
       <span>WhatsApp</span>
     </button>
   </aside>
-<script src="catalogo.js?v=20260819-9"></script>
+<script src="catalogo.js?v=20260827-10"></script>
 </body>
 </html>
